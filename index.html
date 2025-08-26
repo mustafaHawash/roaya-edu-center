@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS -->
+    <!-- Tailwind -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Fonts -->
+    <!-- internal style -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..900&display=swap');
+
+        :root {
+            --prim-color: #1CB098;
+            --sec-color: #04000B;
+        }
+
+        * {
+            font-family: 'Cairo', sans-serif;
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+    <!-- icon -->
+    <link rel="icon" href="./assets/images/logo-icon.png" />
+    <!-- Title -->
+    <title>مركز رؤية التعليمي</title>
+</head>
+
+<body class="bg-[#E5FEF4]">
+    <!-- Header -->
+    <header class="bg-[url('./assets/images/banner-7.jpg')] bg-cover bg-center bg-no-repeat">
+        <!-- Nav -->
+        <nav class="nav py-3 flex flex-wrap justify-between items-center w-[90%] md:w-[85%] lg:w-[80%] mx-auto">
+            <a href="./index.html" class="nav__logo flex items-center text-2xl font-bold text-[var(--sec-color)]">
+                <img src="./assets/images/logo-icon.png" alt="logo" />
+                رؤيــة
+            </a>
+            <button class="nav__toggle cursor-pointer hover:text-[var(--prim-color)] md:hidden">
+                <i class=" fa-solid fa-bars"></i>
+            </button>
+            <ul class="nav__links text-center space-y-2 hidden w-full md:w-auto md:flex">
+                <li>
+                    <a class="nav__link md:p-3 font-medium text-xl hover:text-[var(--prim-color)]"
+                        href="./index.html">الرئيسية</a>
+                </li>
+                <li>
+                    <a class="nav__link md:p-3 font-medium text-xl hover:text-[var(--prim-color)]"
+                        href="./index.html#commitment">من
+                        نحن</a>
+                </li>
+                <li>
+                    <a class="nav__link md:p-3 font-medium text-xl hover:text-[var(--prim-color)]"
+                        href="./courses.html">الدورات
+                        التقنية</a>
+                </li>
+                <li>
+                    <a class="nav__link md:p-3 font-medium text-xl hover:text-[var(--prim-color)]" href="#contactUs">تواصل
+                        معنا</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- End Nav -->
+        <div
+            class="row flex flex-col items-center md:h-[90vh] md:flex-row justify-between mx-auto w-[90%] md:w-[85%] lg:w-[80%]">
+            <div class="hero__content flex flex-col items-center md:items-start text-center md:text-start md:w-[48%]">
+                <h5
+                    class="flex flex-row-reverse gap-x-2 justify-end items-center text-[var(--sec-color)] text-[1.5rem] font-semibold my-[1.5rem]">
+                    تصفح أكثر من +600 محتوى تعليمي عالي المستوى
+                    <svg class="hidden lg:block" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" width="25" height="25" viewBox="0 0 91 92">
+                        <image
+                            xlink:href="data:image/png;base64,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"
+                            x="0" y="0" width="91" height="92" />
+                    </svg>
+                </h5>
+                <h1 class="text-[var(--sec-color)] text-[2.5rem] font-bold mb-[1.5rem] leading-20">
+                    تعـلم بذكــاء, تطور بسـرعة
+                    <strong class="p-1 bg-[var(--prim-color)] text-white rounded-lg">وتمـــيز</strong>
+                </h1>
+                <p class="text-[var(--sec-color)] text-[1.5rem] font-light mb-[1.5rem]">
+                    وسّع آفاق معرفتك وافتح طرقاً مهنية واعدة مع منصتنا
+                    التعليمية رحلتك نحو المستقبل تبدأ هنا
+                </p>
+                <a href="#"
+                    class="px-[3rem] py-4 bg-linear-to-r from-[var(--prim-color)] from-15% to-[var(--sec-color)] hover:translate-[3px] text-white text-[1.5rem] rounded-md w-fit font-semibold mb-[1.5rem]">احجز
+                    الآن</a>
+            </div>
+            <div class="hero__image w-full md:w-[50%] max-w-lg flex items-center justify-center overflow-hidden">
+                <img class="w-full h-full object-cover" src="./assets/images/heroPic.png" alt="hero-image" />
+            </div>
+        </div>
+    </header>
+    <!-- End Header -->
+    <!-- Top Categories -->
+    <section class="top-categories bg-[url('./assets/images/topCategoriesBg.png')] bg-center py-[3.5rem] md:py-[7rem]">
+        <div class="row flex flex-col items-center justify-center mx-auto w-[90%] md:w-[85%] lg:w-[80%]">
+            <h4
+                class="text-[var(--prim-color)] py-3 px-6 outline-1 rounded-md bg-white text-[1.5rem] font-bold my-[1.5rem]">
+                أفضل الدورات
+            </h4>
+            <h2 class="text-[var(--sec-color)]  text-center  mb-[1.5rem] font-bold text-[2rem] leading-20">
+                المحتوى الأكثر طلباً للتعلم منه هذا الاسبوع
+            </h2>
+            <div class="top-categories__cards w-full flex flex-wrap justify-center gap-4">
+                <div
+                    class="top-categories__card h-[21rem] md:w-[48%] lg:w-[23%] justify-center gap-4 rounded-md p-4 flex flex-col bg-white border border-gray-300 cursor-pointer hover:scale-103">
+                    <h4 class="text-[var(--sec-color)] text-[1.5rem] font-semibold">
+                        تطوير الويب (Web Development)
+                    </h4>
+                    <span class="block p-1 bg-[var(--prim-color)] font-medium text-white rounded-lg w-fit">120
+                        ساعة</span>
+                    <div class="tcard-img rounded-md w-full overflow-hidden">
+                        <img class="w-full h-full object-fill" src="./assets/images/webCoursePic.png"
+                            alt="webCoursePic" />
+                    </div>
+                </div>
+                <div
+                    class="top-categories__card h-[21rem] md:w-[48%] lg:w-[23%] justify-center gap-4 rounded-md p-4 flex flex-col bg-white border border-gray-300 cursor-pointer hover:scale-103">
+                    <h4 class="order-1 text-[var(--sec-color)] text-[1.5rem] font-semibold">
+                        تحليل البيانات بلغة Python (Data Analysis)
+                    </h4>
+                    <span class="order-2 block p-1 bg-[var(--prim-color)] font-medium text-white rounded-lg w-fit">130
+                        ساعة</span>
+                    <div class="tcard-img rounded-md w-full overflow-hidden">
+                        <img class="w-full h-full object-fill" src="./assets/images/python.jpg" alt="webCoursePic" />
+                    </div>
+                </div>
+                <div
+                    class="top-categories__card h-[21rem] md:w-[48%] lg:w-[23%] justify-center gap-4 rounded-md p-4 flex flex-col bg-white border border-gray-300 cursor-pointer hover:scale-103">
+                    <h4 class="text-[var(--sec-color)] text-[1.5rem] font-semibold">
+                        تطوير الويب باستخدام WordPress (Web Development)
+                    </h4>
+                    <span class="block p-1 bg-[var(--prim-color)] font-medium text-white rounded-lg w-fit">100
+                        ساعة</span>
+                    <div class="tcard-img rounded-md w-full overflow-hidden">
+                        <img class="w-full h-full object-fill" src="./assets/images/wordpress.jpg" alt="webCoursePic" />
+                    </div>
+                </div>
+                <div
+                    class="top-categories__card h-[21rem] md:w-[48%] lg:w-[23%] justify-center gap-4 rounded-md p-4 flex flex-col bg-white border border-gray-300 cursor-pointer hover:scale-103">
+                    <h4 class="order-1 text-[var(--sec-color)] text-[1.5rem] font-semibold">
+                        تصميم واجهة المستخدم (UI/UX Design)
+                    </h4>
+                    <span class="order-2 block p-1 bg-[var(--prim-color)] font-medium text-white rounded-lg w-fit">70
+                        ساعة</span>
+                    <div class="tcard-img rounded-md w-full overflow-hidden">
+                        <img class="w-full h-full object-fill" src="./assets/images/UI-UX.jpg" alt="webCoursePic" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Top Categories -->
+    <!-- Our commitment  -->
+    <section id="commitment" class="commitment bg-white py-[3.5rem] md:py-[7rem]">
+        <div
+            class="row flex flex-col lg:flex-row items-center justify-center gap-5 mx-auto w-[90%] md:w-[85%] lg:w-[80%]">
+            <div class="commitment__image w-full lg:w-[48%] flex items-center justify-center overflow-hidden">
+                <img class="w-full h-full object-cover" src="./assets/images/Commpic.jpg" alt="hero-image" />
+            </div>
+            <div
+                class="commitment__content flex flex-col items-center md:items-start text-center md:text-start w-full lg:w-[48%]">
+                <h2 class=" text-[var(--sec-color)] font-bold text-[2.5rem] leading-20 my-[1.5rem]">
+                    التعلم هو المفتاح لبناء المستقبل </h2>
+                <p class="text-[var(--sec-color)] text-[1.5rem] font-light mb-[1.5rem] leading-10">
+                    نسعى في أكاديمية رؤية للتدريب التقني إلى تقديم برامج تعليمية متخصصة وعملية تُمكّن المتعلمين من
+                    اكتساب مهارات حقيقية تتماشى مع متطلبات سوق العمل. رسالتنا هي توفير بيئة تعليمية مبتكرة تجمع بين
+                    المعرفة النظرية والتطبيق العملي، لنُخرج جيلًا مبدعًا قادرًا على المنافسة والتطوير.
+                </p>
+                <div class="commitment__students flex gap-4">
+                    <h2 class=" border-l pl-6 text-[var(--sec-color)] font-bold text-[1.5rem] mb-[1.5rem]"><strong
+                            class=" text-[var(--prim-color)] font-bold text-[2rem]">28 ألف</strong><br>متخرج رسمياً</h2>
+                    <h2 class=" text-[var(--sec-color)] font-bold text-[1.5rem] mb-[1.5rem]"><strong
+                            class=" text-[var(--prim-color)] font-bold text-[2rem]">98%</strong><br>نسبة النجاح</h2>
+                </div>
+                <a href="#"
+                    class="px-[3rem] py-4 bg-[var(--prim-color)] hover:translate-[3px] text-white text-[1.5rem] rounded-md w-fit font-semibold mb-[1.5rem]">ابــدأ
+                    الآن</a>
+            </div>
+        </div>
+    </section>
+    <!-- Our commitment  -->
+    <!-- Courses -->
+    <section id="courses"
+        class="courses bg-[url('./assets/images/banner-7.jpg')] bg-center bg-cover  py-[3.5rem] md:py-[7rem]">
+        <div
+            class="courses__heading row flex flex-col items-center justify-center mx-auto w-[90%] md:w-[85%] lg:w-[80%]">
+            <h4 class="text-[var(--prim-color)] py-3 px-6 outline-1 rounded-md text-[1.5rem] font-bold my-[1.5rem]">
+                أُضيف حديثاً</h4>
+            <h2 class="text-[var(--sec-color)]  text-center  mb-[1.5rem] font-bold text-[2rem] leading-20">
+                احتراف المهارات التقنية يبدأ من هنا </h2>
+        </div>
+        <div
+            class="courses__cards row flex flex-col md:flex-row md:flex-wrap gap-4 items-center justify-center py-[3.5rem] mx-auto w-[90%] md:w-[85%] lg:w-[80%]">
+            <div class="courses__card h-[34rem] md:w-[48%] lg:w-[30%] justify-between rounded-md p-6 flex flex-col bg-white border border-gray-300  hover:border-[var(--prim-color)]"
+                category="design">
+                <div class="courses__card-img rounded-md w-full overflow-hidden">
+                    <img class="w-full h-full object-fill" src="./assets/images/Design1.jpg" alt="webCoursePic" />
+                </div>
+                <div class="courses__card-inst">
+                    <h5 class="text-[var(--sec-color)] text-[1.2rem] font-semibold">م. مصطفى محمد </h5>
+                    <span class="text-[var(--prim-color)]">مصمم ويب UI/UX</span>
+                </div>
+                <p class="courses__card-desc text-[var(--sec-color)] text-[1.2rem] font-bold">
+                    مختبر التصميم الإبداعي بالذكاء الاصطناعي </p>
+                <div class="courses__card-students text-[#BBBCC2]">
+                    <i class="fa-solid fa-user-graduate"></i>
+                    <span class="pr-1">1,500 طالب</span>
+                    <i class="fa-solid fa-book pr-3"></i>
+                    <span class="pr-1">60 ساعة</span>
+                </div>
+                <div class="courses__card-enroll border-t border-[#BBBCC2] flex justify-between items-center py-4 ">
+                    <h5 class="text-[var(--sec-color)] text-[1.5rem] font-bold">99 $</h5>
+                    <button
+                        class="text-[var(--sec-color)] font-semibold cursor-pointer p-1 rounded-sm hover:bg-[var(--prim-color)] hover:text-white">أضف
+                        إلي العربة <i class="fa-regular fa-square-caret-up"></i></button>
+                </div>
+            </div>
+            <div class="courses__card h-[34rem] md:w-[48%] lg:w-[30%] justify-between rounded-md p-6 flex flex-col bg-white border border-gray-300  hover:border-[var(--prim-color)]"
+                category="design">
+                <div class="courses__card-img rounded-md w-full overflow-hidden">
+                    <img class="w-full h-full object-fill" src="./assets/images/motion-graphic-course.png"
+                        alt="webCoursePic" />
+                </div>
+                <div class="courses__card-inst">
+                    <h5 class="text-[var(--sec-color)] text-[1.2rem] font-semibold">م. أسماء سعيد </h5>
+                    <span class="text-[var(--prim-color)]"> مصمم موشن جرافيك</span>
+                </div>
+                <p class="courses__card-desc text-[var(--sec-color)] text-[1.2rem] font-bold">
+                    دورة الرسوم المتحركة الاحترافية (Motion Graphics)</p>
+                <div class="courses__card-students text-[#BBBCC2]">
+                    <i class="fa-solid fa-user-graduate"></i>
+                    <span class="pr-1">2,000 طالب</span>
+                    <i class="fa-solid fa-book pr-3"></i>
+                    <span class="pr-1">60 ساعة</span>
+                </div>
+                <div class="courses__card-enroll border-t border-[#BBBCC2] flex justify-between items-center py-4 ">
+                    <h5 class="text-[var(--sec-color)] text-[1.5rem] font-bold">75 $</h5>
+                    <button
+                        class="text-[var(--sec-color)] font-semibold cursor-pointer p-1 rounded-sm hover:bg-[var(--prim-color)] hover:text-white">أضف
+                        إلي العربة <i class="fa-regular fa-square-caret-up"></i></button>
+                </div>
+            </div>
+            <div class="courses__card h-[34rem] md:w-[48%] lg:w-[30%] justify-between rounded-md p-6 flex flex-col bg-white border border-gray-300  hover:border-[var(--prim-color)]"
+                category="design">
+                <div class="courses__card-img rounded-md w-full overflow-hidden">
+                    <img class="w-full h-full object-fill" src="./assets/images/design2.jpg" alt="webCoursePic" />
+                </div>
+                <div class="courses__card-inst">
+                    <h5 class="text-[var(--sec-color)] text-[1.2rem] font-semibold">م. كريم فؤاد </h5>
+                    <span class="text-[var(--prim-color)]">مصمم ويب UI/UX</span>
+                </div>
+                <p class="courses__card-desc text-[var(--sec-color)] text-[1.2rem] font-bold">
+                    أساسيات تصميم العلامات التجارية باستخدام FIGMA</p>
+                <div class="courses__card-students text-[#BBBCC2]">
+                    <i class="fa-solid fa-user-graduate"></i>
+                    <span class="pr-1">890 طالب</span>
+                    <i class="fa-solid fa-book pr-3"></i>
+                    <span class="pr-1">30 ساعة</span>
+                </div>
+                <div class="courses__card-enroll border-t border-[#BBBCC2] flex justify-between items-center py-4 ">
+                    <h5 class="text-[var(--sec-color)] text-[1.5rem] font-bold">40 $</h5>
+                    <button
+                        class="text-[var(--sec-color)] font-semibold cursor-pointer p-1 rounded-sm hover:bg-[var(--prim-color)] hover:text-white">أضف
+                        إلي العربة <i class="fa-regular fa-square-caret-up"></i></button>
+                </div>
+            </div>
+            <div class="courses__card h-[34rem] md:w-[48%] lg:w-[30%] justify-between rounded-md p-6 flex flex-col bg-white border border-gray-300  hover:border-[var(--prim-color)]"
+                category="web-dev">
+                <div class="courses__card-img rounded-md w-full overflow-hidden">
+                    <img class="w-full h-full object-fill" src="./assets/images/web2.jpg" alt="webCoursePic" />
+                </div>
+                <div class="courses__card-inst">
+                    <h5 class="text-[var(--sec-color)] text-[1.2rem] font-semibold">م. يوسف منصور </h5>
+                    <span class="text-[var(--prim-color)]">مهندس برمجيات</span>
+                </div>
+                <p class="courses__card-desc text-[var(--sec-color)] text-[1.2rem] font-bold">
+                    بناء المواقع التفاعلية باستخدام (Dynamic Web Essentials)</p>
+                <div class="courses__card-students text-[#BBBCC2]">
+                    <i class="fa-solid fa-user-graduate"></i>
+                    <span class="pr-1">1,800 طالب</span>
+                    <i class="fa-solid fa-book pr-3"></i>
+                    <span class="pr-1">60 ساعة</span>
+                </div>
+                <div class="courses__card-enroll border-t border-[#BBBCC2] flex justify-between items-center py-4 ">
+                    <h5 class="text-[var(--sec-color)] text-[1.5rem] font-bold">60 $</h5>
+                    <button
+                        class="text-[var(--sec-color)] font-semibold cursor-pointer p-1 rounded-sm hover:bg-[var(--prim-color)] hover:text-white">أضف
+                        إلي العربة <i class="fa-regular fa-square-caret-up"></i></button>
+                </div>
+            </div>
+            <div class="courses__card h-[34rem] md:w-[48%] lg:w-[30%] justify-between rounded-md p-6 flex flex-col bg-white border border-gray-300  hover:border-[var(--prim-color)]"
+                category="web-dev">
+                <div class="courses__card-img h-[40%] rounded-md w-full overflow-hidden">
+                    <img class="w-full h-full object-fill" src="./assets/images/cyber.jpg" alt="webCoursePic" />
+                </div>
+                <div class="courses__card-inst">
+                    <h5 class="text-[var(--sec-color)] text-[1.2rem] font-semibold">م. سامي جمال </h5>
+                    <span class="text-[var(--prim-color)]">خبير أمن سيبراني</span>
+                </div>
+                <p class="courses__card-desc text-[var(--sec-color)] text-[1.2rem] font-bold">
+                    أساسيات أمان تطبيقات الويب (Web Security Foundations)</p>
+                <div class="courses__card-students text-[#BBBCC2]">
+                    <i class="fa-solid fa-user-graduate"></i>
+                    <span class="pr-1">950 طالب</span>
+                    <i class="fa-solid fa-book pr-3"></i>
+                    <span class="pr-1">20 ساعة</span>
+                </div>
+                <div class="courses__card-enroll border-t border-[#BBBCC2] flex justify-between items-center py-4 ">
+                    <h5 class="text-[var(--sec-color)] text-[1.5rem] font-bold">45 $</h5>
+                    <button
+                        class="text-[var(--sec-color)] font-semibold cursor-pointer p-1 rounded-sm hover:bg-[var(--prim-color)] hover:text-white">أضف
+                        إلي العربة <i class="fa-regular fa-square-caret-up"></i></button>
+                </div>
+            </div>
+            <div class="courses__card h-[34rem] md:w-[48%] lg:w-[30%] justify-between rounded-md p-6 flex flex-col bg-white border border-gray-300  hover:border-[var(--prim-color)]"
+                category="web-dev">
+                <div class="courses__card-img rounded-md w-full overflow-hidden">
+                    <img class="w-full h-full object-fill" src="./assets/images/wordpress.jpg" alt="webCoursePic" />
+                </div>
+                <div class="courses__card-inst">
+                    <h5 class="text-[var(--sec-color)] text-[1.2rem] font-semibold">م. سلمى الهاشمي </h5>
+                    <span class="text-[var(--prim-color)]">مطور واجهات أمامية</span>
+                </div>
+                <p class="courses__card-desc text-[var(--sec-color)] text-[1.2rem] font-bold">
+                    إنشاء وتطوير المدونات باستخدام WordPress</p>
+                <div class="courses__card-students text-[#BBBCC2]">
+                    <i class="fa-solid fa-user-graduate"></i>
+                    <span class="pr-1">750 طالب</span>
+                    <i class="fa-solid fa-book pr-3"></i>
+                    <span class="pr-1">55 ساعة</span>
+                </div>
+                <div class="courses__card-enroll border-t border-[#BBBCC2] flex justify-between items-center py-4 ">
+                    <h5 class="text-[var(--sec-color)] text-[1.5rem] font-bold">75 $</h5>
+                    <button
+                        class="text-[var(--sec-color)] font-semibold cursor-pointer p-1 rounded-sm hover:bg-[var(--prim-color)] hover:text-white">أضف
+                        إلي العربة <i class="fa-regular fa-square-caret-up"></i></button>
+                </div>
+            </div>
+        </div>
+        <a href="./courses.html"
+            class="text-[var(--prim-color)] py-3 px-4 outline-1 hover:bg-[var(--prim-color)] hover:text-white rounded-md text-[1.2rem] font-bold mx-[35%] md:mx-[40%] lg:mx-[43%]">
+            تصفح المزيد </a>
+    </section>
+    <!-- End Courses -->
+    <!-- Footer -->
+    <footer id="contactUs" class="bg-[#0E2A47] py-[3.5rem] footer">
+        <div class="row flex flex-col items-center justify-center mx-auto w-[90%] md:w-[85%] lg:w-[80%]">
+            <div class="flex justify-between w-full flex-wrap gap-4">
+                <div class="footer__logo flex flex-col gap-4 w-[50%] md:w-[20%]">
+                    <a href="./index.html" class="footer__logo-img flex items-center text-2xl font-bold text-white">
+                        <img src="./assets/images/logo-icon.png" alt="logo" />
+                        رؤيــة
+                    </a>
+                    <p class="text-sm mb-4 text-white leading-8">رسالتنا هي توفير بيئة تعليمية مبتكرة تجمع بين
+                        المعرفة النظرية والتطبيق العملي، لنُخرج جيلًا مبدعًا قادرًا على المنافسة والتطوي
+                    </p>
+                    <div class="flex gap-4 text-[var(--prim-color)]">
+                        <a href="#" class="hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="hover:text-white"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#" class="hover:text-white"><i class="fab fa-github"></i></a>
+                        <a href="#" class="hover:text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-3 text-lg">إعرف أكثر</h3>
+                    <ul class=" text-white space-y-2 text-medium">
+                        <li><a href="#" class="hover:text-[var(--prim-color)]">من نحن</a></li>
+                        <li><a href="#" class="hover:text-[var(--prim-color)]">الدورات</a></li>
+                        <li><a href="#" class="hover:text-[var(--prim-color)]">الأخبار</a></li>
+                        <li><a href="#" class="hover:text-[var(--prim-color)]">هل انت محاضر؟</a></li>
+                    </ul>
+                </div>
+
+
+                <div>
+                    <h3 class="text-white font-semibold mb-3 text-lg">روابط سريعة</h3>
+                    <ul class=" text-white space-y-2 text-medium">
+                        <li><a href="#" class="hover:text-[var(--prim-color)]">جولة في المنصة</a></li>
+                        <li><a href="#" class="hover:text-[var(--prim-color)]">دورات مجانية</a></li>
+                        <li><a href="#" class="hover:text-[var(--prim-color)]">طلب عرض توضيحي</a></li>
+                        <li><a href="#" class="hover:text-[var(--prim-color)]">الطلاب </a></li>
+                    </ul>
+                </div>
+
+
+                <div>
+                    <h3 class="text-white font-semibold mb-3 text-lg">تواصل معنا</h3>
+                    <ul class="text-white space-y-2 text-medium">
+                        <li><a class="hover:text-[var(--prim-color)]">01201949677</a></li>
+                        <li><a href="#" class="hover:text-[var(--prim-color)]">hiohio855@gmail.com</a></li>
+                        <li><a href="#" class="hover:text-[var(--prim-color)]">m_s2010512@yahoo.com</a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="mt-12 border-t border-gray-700 pt-6 text-center text-sm text-[var(--prim-color)]">
+                © جميع حقوق الطبع والنشر محفوظة
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+    <!-- JavaScript -->
+    <script src="./assets/js/app.js"></script>
+    <!-- EndJavaScript -->
+</body>
+
+</html>
