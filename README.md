@@ -19,12 +19,7 @@ Roaya Educational Center Project: a responsive educational center website built 
 ---
 
 ## 🌐 Live Demo
-[View on GitHub Pages](your-live-link-here)
-
----
-
-## 📷 Preview
-![Project Screenshot](screenshot.png)
+[View on GitHub Pages](https://roaya.netlify.app/)
 
 ---
 
